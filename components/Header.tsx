@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Resume', href: '#' },
   { name: 'Four Loop', href: '#' },
 ]
-const logoSrc = "/images/1x/logo.png";
+const logoSrc = "/images/3x/logo.png";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -23,7 +23,7 @@ export const Header = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">RO</span>
-          <Image className="h-8 w-auto" src={logoSrc} alt="" width={300} height={300} />
+          <Image className="h-12 w-auto" src={logoSrc} alt="" width={100} height={100} />
         </a>
         <div className="flex lg:hidden">
           <DarkModeToggle className="mr-5" />
