@@ -8,13 +8,11 @@ interface IHomeProps {
   allPosts: any
 }
 
-export default function Home({ bio, allPosts }: IHomeProps) {
+export default function Home({ bio }: IHomeProps) {
   return (
     <BaseLayout title="RO - Home" pageDescription="Home page">
-      <div className="max-w-2xl h-full">
-        <p className="dark:text-white">
-          <RichText content={bio.content} />
-        </p>
+      <div className="max-w-2xl h-full dark:text-white">
+        <RichText content={bio.content} />
       </div>
     </BaseLayout>
   )

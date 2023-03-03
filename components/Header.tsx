@@ -23,9 +23,10 @@ export const Header = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">RO</span>
-          <Image className="h-8 w-auto" src={logoSrc} alt="" width="300" height="300" />
+          <Image className="h-8 w-auto" src={logoSrc} alt="" width={300} height={300} />
         </a>
         <div className="flex lg:hidden">
+          <DarkModeToggle className="mr-5" />
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -53,6 +54,8 @@ export const Header = () => {
               <Image
                 className="h-8 w-auto"
                 src={logoSrc}
+                width={300}
+                height={300}
                 alt=""
               />
             </a>
