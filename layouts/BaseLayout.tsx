@@ -24,7 +24,7 @@ export default function BaseLayout({ title, pageDescription, children }: IBlankL
       <Metatags title={title} pageDescription={pageDescription} />
       <div className="bg-white dark:bg-black">
         <Header />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 min-h-[80vh]">
           <div className="mx-auto">
             {children}
           </div>
