@@ -1,7 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
-import markdownStyles from './markdown-styles.module.css'
-import RichTextAsset from './RichTextAsset'
+import markdownStyles from '@/components/Contentful/markdown-styles.module.css'
+import RichTextAsset from '@/components/Contentful/RichTextAsset'
 
 const customMarkdownOptions = (content: any) => ({
   renderNode: {

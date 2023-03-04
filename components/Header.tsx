@@ -1,21 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DarkModeToggle from "@/components/DarkModeToggle";
+import Logo from "@/components/Logo";
+import useDarkMode from "@/hooks/useDarkMode";
 
 const navigation = [
-  { name: 'About me', href: '#' },
+  { name: 'About', href: '#' },
   { name: 'Blog', href: '#' },
-  { name: 'Resume', href: '#' },
-  { name: 'Four Loop', href: '#' },
+  // { name: 'Resume', href: '#' },
+  // { name: 'Four Loop', href: '#' },
 ]
 const logoSrc = "/images/3x/logo.png";
 
 export const Header = () => {
+  const [colorTheme, setTheme] = useDarkMode();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -23,7 +25,7 @@ export const Header = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">RO</span>
-          <Image className="h-12 w-auto" src={logoSrc} alt="" width={100} height={100} />
+          <Logo />
         </a>
         <div className="flex lg:hidden">
           <DarkModeToggle className="mr-5" />
@@ -51,13 +53,7 @@ export const Header = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">raoufosman.me</span>
-              <Image
-                className="h-8 w-auto"
-                src={logoSrc}
-                width={300}
-                height={300}
-                alt=""
-              />
+              <Logo />
             </a>
             <button
               type="button"

@@ -9,6 +9,7 @@ export default function useDarkMode() {
     document.documentElement.classList.add(theme);
     localStorage.setItem('theme', theme);
     setTheme(theme);
+
   }, [theme, colorTheme]);
 
 
