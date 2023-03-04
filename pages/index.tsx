@@ -1,5 +1,5 @@
 import BaseLayout from "@/layouts/BaseLayout";
-import { getBio } from "@/api/bio";
+import { getHomePageBio } from "@/api/homePageBio";
 import { getAllPostsForHome, getAllPostsWithSlug } from "@/api/blog";
 import RichText from "@/components/Contentful/RichText";
 
@@ -20,8 +20,7 @@ export default function Home({ bio }: IHomeProps) {
 
 export async function getStaticProps({ preview = false }) {
   //const allPosts = await getAllPostsForHome(preview)
-  const bio = await getBio();
-
+  const bio = await getHomePageBio();
   return {
     props: {
       bio
