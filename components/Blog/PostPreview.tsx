@@ -17,7 +17,7 @@ export default function PostPreview({
 }: any) {
   return (
     <div className="flex flex-row justify-between">
-      <div className="flex flex-col">
+      <div className="flex flex-col basis-1/2">
         {author && <Avatar name={author.name} picture={author.picture} />}
         <div className="mb-2">
           <h1 className="subpixel-antialiased text-xl font-bold">{title}</h1>
@@ -47,9 +47,9 @@ export default function PostPreview({
       </div>
       <div className="flex">
         <Image
-          width={300}
-          height={300}
-          className="mt-4 rounded-md sm:p-0 sm:rounded-lg h-30 w-40 sm:h-30 sm:w-60"
+          width={200}
+          height={100}
+          className="mt-4 rounded-md sm:p-0 sm:rounded-lg h-15 w-15 sm:h-15 sm:w-15"
           alt={`Cover Image for ${title}`}
           src={coverImage.url}
         />
