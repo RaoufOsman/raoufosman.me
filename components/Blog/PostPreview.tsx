@@ -33,7 +33,7 @@ export default function PostPreview({
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           <div>
             {tags.map((t: any) =>
-              <a
+              <a key={t.id}
                 href={`/tags/${t.id}`}
                 className="rounded-full bg-gray-50 py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-100"
               >
