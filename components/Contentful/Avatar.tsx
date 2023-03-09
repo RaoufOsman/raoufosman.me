@@ -1,24 +1,22 @@
-import Image from '@/components/Contentful/Image'
+import Image from "@/components/Contentful/Image";
 
 interface IAvatarProps {
-  name: string,
-  picture: any
+  name: string;
+  picture: any;
 }
 
 export default function Avatar({ name, picture }: IAvatarProps) {
   return (
     <div className="flex flex-row mb-2">
       <Image
-        className="inline-block sm:h-8 sm:w-8 md:h-12 md:w-12 lg:h-15 lg:w-15 rounded-full mr-1"
-        height={100}
-        width={100}
+        className="h-8 w-8 rounded-full"
+        height={50}
+        width={50}
         src={picture.url}
         alt={name}
       />
       <div className="flex mt-2">
-        <span className="text-black text-lg font-bold ml-3">
-          {name}
-        </span>
+        <span className="text-black text-sm font-bold ml-3">{name}</span>
         {/* <span className="text-gray-500 text-sm mr-1">in</span>
         <span className="text-black text-sm font-bold">Medium Staff</span> */}
       </div>
@@ -33,5 +31,5 @@ export default function Avatar({ name, picture }: IAvatarProps) {
     //     />
     //   </div>
     // </div>
-  )
+  );
 }
