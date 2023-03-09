@@ -11,9 +11,10 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  key
 }: any) {
   return (
-    <div className="mx-auto grid grid-flow-col auto-cols-max gap-4">
+    <div className="mx-auto grid grid-flow-col auto-cols-max gap-4" key={key}>
       <div>
         <div className="grid grid-flow-col auto-cols-max gap-4">
           <div>
