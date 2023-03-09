@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "@/components/Contentful/Image";
 import Avatar from "@/components/Contentful/Avatar";
 import DateFormat from "@/components/Contentful/DateFormat";
 import CoverImage from "@/components/Blog/CoverImage";
@@ -14,47 +15,41 @@ export default function PostPreview({
   slug,
 }: any) {
   return (
-    <MediumStylePost />
-    //   <div className="mx-auto grid grid-cols-2 gap-4">
-    //     <div>
-    //       <div className="grid grid-cols-2 gap-4">
-    //         <div>
-    //           {author && <Avatar name={author.name} picture={author.picture} />}
-    //         </div>
-    //         <div className="h-12 mt-3">
-    //           <DateFormat dateString={date} />
-    //         </div>
-    //       </div>
-    //       <div className="grid grid-rows-3">
-    //         <h3 className="text-xl mb-3 leading-snug">
-    //           <Link href={`/blog/${slug}`} className="hover:underline">
-    //             {title}
-    //           </Link>
-    //         </h3>
-    //         <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-    //         <div>
-    //           {tags.map((t: any) => (
-    //             <a
-    //               key={t.id}
-    //               href={`/tags/${t.id}`}
-    //               className="rounded-full bg-gray-50 py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-100"
-    //             >
-    //               {t.name}
-    //             </a>
-    //           ))}
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div>
-    //       <CoverImage
-    //         className="rounded-lg"
-    //         title={title}
-    //         slug={slug}
-    //         url={coverImage.url}
-    //         height={200}
-    //         width={200}
-    //       />
-    //     </div>
-    //   </div>
-  );
+    <div className="flex flex-row">
+      <div className="flex flex-col">
+        {author && <Avatar name={author.name} picture={author.picture} />}
+        <div className="mb-2">
+          <h1 className="subpixel-antialiased text-xl font-bold">
+            {title}
+          </h1>
+        </div>
+        <div className="text-md antialiased text-gray-500 mb-2">
+          {excerpt}
+        </div>
+        <div className="flex">
+          <div className="text-sm antialiased text-gray-500 mr-5 mt-1">
+            <DateFormat dateString={date} />
+          </div>
+          {/* <div className="text-sm antialiased text-gray-500 mr-5 mt-1">
+            4 min read
+          </div> */}
+          {tags.map((t: any) =>
+            <div className="text-xs antialiased text-gray-500 mr-5" key={t.id}>
+              <div className="bg-gray-100 p-2 rounded-full">
+                {t.name}
+              </div>
+            </div>)}
+        </div>
+      </div>
+      <div className="ml-auto order-2">
+        <Image
+          width={300}
+          height={300}
+          className="rounded-lg"
+          alt={`Cover Image for ${title}`}
+          src={coverImage.url}
+        />
+      </div>
+    </div>
+  )
 }
