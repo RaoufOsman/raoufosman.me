@@ -8,7 +8,7 @@ interface IHomePageBioProps {
 export default function HomePageBio({ bio }: IHomePageBioProps) {
   return (
     <>
-      {bio ? <RichText content={bio.content} /> : ""}
+      <RichText content={bio.content} />
       <div className="mx-auto flex gap-x-4">
         {Socials.map((item, itemIdx) => (
           <a key={itemIdx} href={item.href} className="text-gray-400 hover:text-gray-500">

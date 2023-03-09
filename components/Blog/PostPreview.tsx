@@ -10,13 +10,12 @@ export default function PostPreview({
   date,
   excerpt,
   author,
-  slug,
-  key
+  slug
 }: any) {
   return (
-    <div className="mx-auto grid grid-flow-col auto-cols-max gap-4" key={key}>
+    <div className="mx-auto grid grid-cols-2 sm:grid-cols-1 gap-4">
       <div>
-        <div className="grid grid-flow-col auto-cols-max gap-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
           <div>
             {author && <Avatar name={author.name} picture={author.picture} />}
           </div>
@@ -24,7 +23,7 @@ export default function PostPreview({
             <DateFormat dateString={date} />
           </div>
         </div>
-        <div className="grid grid-flow-row auto-rows-max">
+        <div className="grid grid-rows-3">
           <h3 className="text-xl mb-3 leading-snug">
             <Link href={`/blog/${slug}`} className="hover:underline">
               {title}
