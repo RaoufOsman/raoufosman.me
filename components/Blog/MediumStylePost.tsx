@@ -5,6 +5,20 @@ const MediumStylePost = () => {
   return (
     <div className="flex flex-row">
       <div className="flex flex-col">
+        <div className="flex flex-row mb-2">
+          <img
+            className="inline-block h-6 w-6 rounded-full mr-1"
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            alt=""
+          />
+          <div className="flex mt-1">
+            <span className="text-black text-sm font-bold mr-1">
+              Medium Staff
+            </span>
+            <span className="text-gray-500 text-sm mr-1">in</span>
+            <span className="text-black text-sm font-bold">Medium Staff</span>
+          </div>
+        </div>
         <div className="mb-2">
           <h1 className="subpixel-antialiased text-xl font-bold">
             ‘Women’s history is women’s right’
