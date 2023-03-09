@@ -1,30 +1,35 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import { getHomePageBio } from "@/api/homePageBio";
 import { getAllPostsForHome, getAllPostsWithSlug } from "@/api/blog";
-import RichText from "@/components/Contentful/RichText";
+
+import HomePageBio from "@/components/Home/HomePageBio";
+import Posts from "@/components/Blog/Posts";
+
+import { BLOG_FILTERS } from "@/lookups";
 
 interface IHomeProps {
   bio: any,
-  allPosts: any
+  posts: any
 }
 
-export default function Home({ bio }: IHomeProps) {
+export default function Home({ bio, posts }: IHomeProps) {
   return (
     <BaseLayout title="RO - Home" pageDescription="Home page">
-      <div className="max-w-2xl h-full dark:text-white">
-        <RichText content={bio.content} />
+      <div className="max-w-3xl mx-auto">
+        <HomePageBio bio={bio} />
+        <Posts limit={5} filter={BLOG_FILTERS.NONE} posts={posts} />
       </div>
     </BaseLayout>
   )
 }
 
-export async function getStaticProps({ preview = false }) {
-  //const allPosts = await getAllPostsForHome(preview)
+export async function getStaticProps({ preview = true }) {
+  const posts = await getAllPostsForHome(preview, 5);
   const bio = await getHomePageBio();
   return {
     props: {
-      bio
-      // allPosts
+      bio,
+      posts
     },
   }
 }

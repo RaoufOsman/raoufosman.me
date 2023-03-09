@@ -1,6 +1,15 @@
 import { fetchGraphQL } from "./common";
 
 const BLOG_GRAPHQL_FIELDS = `
+sys {
+  id
+}
+contentfulMetadata {
+  tags {
+    id
+    name
+  }
+}
 featured
 slug
 title
@@ -66,10 +75,10 @@ export async function getAllPostsWithSlug() {
   return extractPostEntries(entries)
 }
 
-export async function getAllPostsForHome(preview: boolean) {
+export async function getAllPostsForHome(preview: boolean, limit: number) {
   const entries = await fetchGraphQL(
     `query {
-      blogCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}) {
+      blogCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}, limit: ${limit}) {
         items {
           ${BLOG_GRAPHQL_FIELDS}
         }

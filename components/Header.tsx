@@ -17,12 +17,11 @@ const navigation = [
 const logoSrc = "/images/3x/logo.png";
 
 export const Header = () => {
-  const [colorTheme, setTheme] = useDarkMode();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="mx-auto max-w-3xl p-6 lg:px-8">
+      <nav className="flex items-center justify-between" aria-label="Global">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">RO</span>
           <Logo />

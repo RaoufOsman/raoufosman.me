@@ -16,13 +16,11 @@ const customMarkdownOptions = (content: any) => ({
 
 export default function RichText({ content }: any) {
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className={markdownStyles['markdown']}>
-        {documentToReactComponents(
-          content.json,
-          customMarkdownOptions(content)
-        )}
-      </div>
+    <div className={markdownStyles['markdown']}>
+      {documentToReactComponents(
+        content.json,
+        customMarkdownOptions(content)
+      )}
     </div>
   )
 }
