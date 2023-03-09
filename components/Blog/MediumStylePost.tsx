@@ -24,7 +24,7 @@ const MediumStylePost = () => {
             ‘Women’s history is women’s right’
           </h1>
         </div>
-        <div className="text-md antialiased text-gray-500 mb-2">
+        <div className="text-md antialiased text-gray-500 mb-3">
           A tribute to overlooked innovators, good troublemakers, and remarkable
           women of the past, present, and future
         </div>
@@ -35,8 +35,8 @@ const MediumStylePost = () => {
           <div className="text-sm antialiased text-gray-500 mr-5 mt-1">
             4 min read
           </div>
-          <div className="text-xs antialiased text-gray-500 mr-5">
-            <div className="bg-gray-100 p-2 rounded-full">
+          <div className="bg-gray-100 p-2 rounded-full">
+            <div className="text-xs antialiased text-gray-700">
               Womens History Month
             </div>
           </div>
