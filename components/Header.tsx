@@ -10,11 +10,10 @@ import useDarkMode from "@/hooks/useDarkMode";
 
 const navigation = [
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '#' },
+  { name: 'Blog', href: '/blog' },
   // { name: 'Resume', href: '#' },
   // { name: 'Four Loop', href: '#' },
 ]
-const logoSrc = "/images/3x/logo.png";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

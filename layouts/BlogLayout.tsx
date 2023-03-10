@@ -4,7 +4,7 @@ interface IBlogLayoutProps {
   children: React.ReactNode;
   title: string;
   description: string;
-  additionalMetaTags: React.ReactNode;
+  additionalMetaTags?: React.ReactNode;
 };
 
 export default function BlogLayout({ title, description, additionalMetaTags, children }: IBlogLayoutProps) {
