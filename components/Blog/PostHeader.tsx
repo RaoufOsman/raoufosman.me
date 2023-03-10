@@ -1,24 +1,42 @@
 import Avatar from '@/components/Contentful/Avatar';
 import DateFormat from '@/components/Contentful/DateFormat';
 import CoverImage from '@/components/Blog/CoverImage'
+import { BookmarkIcon, ShareIcon } from '@heroicons/react/24/outline';
 
-export default function PostHeader({ title, coverImage, date, author }: any) {
+export default function PostHeader({ title, coverImage, date, author, tags }: any) {
   return (
     <>
-      <h2>{title}</h2>
-      <div className="hidden md:block md:mb-12">
-        {author && <Avatar name={author.name} picture={author.picture} />}
+      <div className="my-5">
+        <h2 className="text-3xl">{title}</h2>
       </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} url={coverImage.url} />
+      <div className="flex flex flex-row justify-between">
+        <div className="flex flex-col">
+          <div className="mt-5">
+            {author && <Avatar name={author.name} picture={author.picture} />}
+          </div>
+        </div>
+        <div className="flex">
+          <div className="text-sm antialiased text-gray-500 mr-5 mt-1.5 sm:mt-1">
+            <DateFormat dateString={date} />
+          </div>
+          <div className="hidden sm:block">
+            {tags.map((t: any) => (
+              <div
+                className="text-xs antialiased text-gray-500 mr-5"
+                key={t.id}
+              >
+                <div className="bg-gray-100 p-2 rounded-full">{t.name}</div>
+              </div>
+            ))}
+          </div>
+          <div className="flex mt-1 sm:mt-0">
+            <BookmarkIcon className="h-4 w-4 text-gray-400 mt-1 mr-1 sm:h-6 sm:w-6" />
+            <ShareIcon className="h-4 w-4 text-gray-400 mt-1 sm:h-6 sm:w-6" />
+          </div>
+        </div>
       </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          {author && <Avatar name={author.name} picture={author.picture} />}
-        </div>
-        <div className="mb-6 text-lg">
-          <DateFormat dateString={date} />
-        </div>
+      <div className="flex justify-center">
+        <CoverImage width={1000} height={500} title={title} url={coverImage.url} className="rounded-lg" />
       </div>
     </>
   )

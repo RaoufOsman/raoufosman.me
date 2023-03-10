@@ -9,10 +9,11 @@ import Custom404 from '@/pages/404';
 interface IBlankLayoutProps {
   children: React.ReactNode;
   title: string;
-  pageDescription: string
+  pageDescription: string;
+  additionalMetaTags?: React.ReactNode;
 };
 
-export default function BaseLayout({ title, pageDescription, children }: IBlankLayoutProps) {
+export default function BaseLayout({ title, pageDescription, children, additionalMetaTags = null }: IBlankLayoutProps) {
   const router = useRouter();
 
   // if (!router.isFallback) {
@@ -21,7 +22,9 @@ export default function BaseLayout({ title, pageDescription, children }: IBlankL
 
   return (
     <>
-      <Metatags title={title} pageDescription={pageDescription} />
+      <Metatags title={title} pageDescription={pageDescription}>
+        {additionalMetaTags}
+      </Metatags>
       <div className="bg-white dark:bg-black dark:text-white">
         <Header />
         <div className="px-6 lg:px-8 min-h-[80vh]">

@@ -6,8 +6,8 @@ import Image from '@/components/Contentful/Image'
 export default function CoverImage({ title, url, slug, width, height, className }: any) {
   const image = (
     <Image
-      width={width}
-      height={height}
+      width={width ?? 300}
+      height={height ?? 300}
       alt={`Cover Image for ${title}`}
       className={className}
       src={url}

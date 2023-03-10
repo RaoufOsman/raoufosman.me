@@ -48,10 +48,10 @@ function extractPostEntries(fetchResponse: any) {
   return fetchResponse?.data?.blogCollection?.items
 }
 
-export async function getPreviewPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string) {
   const entry = await fetchGraphQL(
     `query {
-      blogCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
+      blogCollection(where: { slug: "${slug}" }, limit: 1) {
         items {
           ${BLOG_GRAPHQL_FIELDS}
         }

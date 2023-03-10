@@ -3,10 +3,10 @@ import Head from 'next/head'
 interface IMetatagProps {
   title: string,
   pageDescription: string,
-  additionalMetaTags?: React.ReactNode
+  children?: React.ReactNode
 }
 
-export default function Metatags({ title, pageDescription, additionalMetaTags }: IMetatagProps) {
+export default function Metatags({ title, pageDescription, children }: IMetatagProps) {
   return (
     <Head>
       <title>{title}</title>
@@ -17,7 +17,7 @@ export default function Metatags({ title, pageDescription, additionalMetaTags }:
       <meta name="msapplication-TileColor" content="#0c0b1c" />
       <meta name="theme-color" content="#0c0b1c" />
 
-      {additionalMetaTags ?? ""}
+      {children}
 
       <link rel="icon" href="/images/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />

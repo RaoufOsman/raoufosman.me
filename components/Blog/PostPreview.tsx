@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { useRouter } from 'next/router'
+
 import Image from "@/components/Contentful/Image";
 import Avatar from "@/components/Contentful/Avatar";
 import DateFormat from "@/components/Contentful/DateFormat";
 import CoverImage from "@/components/Blog/CoverImage";
-import MediumStylePost from "./MediumStylePost";
 import { BookmarkIcon, ShareIcon } from "@heroicons/react/24/outline";
 
 export default function PostPreview({
@@ -15,9 +16,15 @@ export default function PostPreview({
   author,
   slug,
 }: any) {
+  const router = useRouter();
+
+  const navigateToBlog = (e: any) => {
+    router.push(`blog/${slug}`);
+  }
+
   return (
-    <div className="flex flex-row justify-between">
-      <div className="flex flex-col basis-1/2">
+    <div className="flex flex-row justify-between cursor-pointer" onClick={navigateToBlog}>
+      <div className="flex flex-col">
         {author && <Avatar name={author.name} picture={author.picture} />}
         <div className="mb-2">
           <h1 className="subpixel-antialiased text-xl font-bold">{title}</h1>
@@ -49,7 +56,7 @@ export default function PostPreview({
         <Image
           width={200}
           height={100}
-          className="mt-4 rounded-md sm:p-0 sm:rounded-lg h-15 w-15 sm:h-15 sm:w-15"
+          className="sm:hidden mt-4 rounded-md sm:p-0 h-15 w-15"
           alt={`Cover Image for ${title}`}
           src={coverImage.url}
         />
