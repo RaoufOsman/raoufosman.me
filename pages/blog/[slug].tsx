@@ -1,7 +1,10 @@
 import { getAllPostsWithSlug, getPostBySlug } from '@/api/blog';
 import PostHeader from '@/components/Blog/PostHeader';
 import RichText from '@/components/Contentful/RichText';
+import { useTheme } from '@/context/ThemeContext';
 import BlogLayout from '@/layouts/BlogLayout';
+import darkLoading from '@/public/images/ro-dark.gif';
+import lightLoading from '@/public/images/ro-light.gif';
 
 interface IPostProps {
   post: any
@@ -13,12 +16,25 @@ const getAdditionalMetaTags = (post: any) => {
   )
 }
 
-export default function Post({ post }: IPostProps) {
+const loading = (darkMode: boolean) => {
   return (
-    <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
-      <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
-      <RichText content={post.content} />
-    </BlogLayout>
+    darkMode
+      ? <img height={500} className="flex justify-center" width={500} src="/images/ro-light.gif" />
+      : <img height={500} className="flex justify-center" width={500} src="/images/ro-dark.gif" />
+  )
+}
+
+export default function Post({ post }: IPostProps) {
+  const { state } = useTheme();
+  return (
+    <>
+      {!post ? loading(state.darkMode) :
+        <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
+          <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
+          <RichText content={post.content} />
+        </BlogLayout>
+      }
+    </>
   )
 }
 
@@ -26,7 +42,7 @@ export async function getStaticProps({ params }: any) {
   const post = await getPostBySlug(params.slug);
   return {
     props: {
-      post
+      post: post ?? null
     },
   }
 }
