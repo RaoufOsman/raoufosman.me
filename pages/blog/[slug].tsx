@@ -2,7 +2,6 @@ import { getAllPostsWithSlug, getPostBySlug } from '@/api/blog';
 import PostHeader from '@/components/Blog/PostHeader';
 import RichText from '@/components/Contentful/RichText';
 import BlogLayout from '@/layouts/BlogLayout';
-import { useRouter } from 'next/router'
 
 interface IPostProps {
   post: any
@@ -16,7 +15,7 @@ const getAdditionalMetaTags = (post: any) => {
 
 export default function Post({ post }: IPostProps) {
   return (
-    <BlogLayout title={`RO - ${post.title}`} description={post.title} additionalMetaTags={getAdditionalMetaTags(post)}>
+    <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
       <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
       <RichText content={post.content} />
     </BlogLayout>
