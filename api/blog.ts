@@ -62,6 +62,20 @@ export async function getPostBySlug(slug: string) {
   return extractBlogPost(entry)
 }
 
+export async function getPreviewPostBySlug(slug: string) {
+  const entry = await fetchGraphQL(
+    `query {
+      blogCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
+        items {
+          ${BLOG_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    true
+  )
+  return extractBlogPost(entry)
+}
+
 export async function getAllPostsWithSlug() {
   const entries = await fetchGraphQL(
     `query {
