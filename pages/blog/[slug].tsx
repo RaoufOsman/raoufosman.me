@@ -26,15 +26,14 @@ const loading = (darkMode: boolean) => {
 
 export default function Post({ post }: IPostProps) {
   const { state } = useTheme();
+
+  if (!post) return loading(state.darkMode);
+
   return (
-    <>
-      {!post ? loading(state.darkMode) :
-        <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
-          <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
-          <RichText content={post.content} />
-        </BlogLayout>
-      }
-    </>
+    <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
+      <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
+      <RichText content={post.content} />
+    </BlogLayout>
   )
 }
 
