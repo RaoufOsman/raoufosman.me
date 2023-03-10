@@ -21,7 +21,7 @@ export default function PostHeader({
             {author && <Avatar name={author.name} picture={author.picture} />}
           </div>
         </div>
-        <div className="flex mt-5">
+        <div className="flex mt-6">
           <div className="text-sm antialiased text-gray-500 mr-5 mt-1.5 sm:mt-1">
             <DateFormat dateString={date} />
           </div>
