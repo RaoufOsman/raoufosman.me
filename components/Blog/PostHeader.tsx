@@ -15,13 +15,13 @@ export default function PostHeader({
       <div className="my-5">
         <h2 className="text-3xl">{title}</h2>
       </div>
-      <div className="flex flex flex-row justify-between">
+      <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <div className="mt-5">
             {author && <Avatar name={author.name} picture={author.picture} />}
           </div>
         </div>
-        <div className="flex">
+        <div className="flex mt-5">
           <div className="text-sm antialiased text-gray-500 mr-5 mt-1.5 sm:mt-1">
             <DateFormat dateString={date} />
           </div>
