@@ -38,16 +38,18 @@ export default function PostPreview({
           {excerpt}
         </div>
         <div className="flex">
-          <div className="text-sm antialiased text-gray-500 mr-5 mt-1.5 sm:mt-1">
+          <div className="text-sm antialiased text-gray-500 mr-5 mt-1.5 sm:mt-2">
             <DateFormat dateString={date} />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden sm:block mt-1">
             {tags.map((t: any) => (
               <div
-                className="text-xs antialiased text-gray-500 mr-5"
+                className="text-sm antialiased text-gray-500 mr-5"
                 key={t.id}
               >
-                <div className="bg-gray-100 p-2 rounded-full">{t.name}</div>
+                <div className="bg-gray-100 px-4 py-1 rounded-full">
+                  {t.name}
+                </div>
               </div>
             ))}
           </div>
