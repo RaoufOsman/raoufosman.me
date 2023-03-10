@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import Image from "@/components/Contentful/Image";
 import Avatar from "@/components/Contentful/Avatar";
@@ -20,16 +20,21 @@ export default function PostPreview({
 
   const navigateToBlog = (e: any) => {
     router.push(`blog/${slug}`);
-  }
+  };
 
   return (
-    <div className="flex flex-row justify-between cursor-pointer" onClick={navigateToBlog}>
+    <div
+      className="flex flex-row justify-between cursor-pointer"
+      onClick={navigateToBlog}
+    >
       <div className="flex flex-col">
         {author && <Avatar name={author.name} picture={author.picture} />}
         <div className="mb-2">
-          <h1 className="subpixel-antialiased text-xl font-bold">{title}</h1>
+          <h1 className="subpixel-antialiased text-xl font-bold sm:w-11/12">
+            {title}
+          </h1>
         </div>
-        <div className="text-md antialiased text-gray-500 mb-2 hidden sm:block">
+        <div className="text-md antialiased text-gray-500 mb-2 hidden sm:block sm:w-11/12">
           {excerpt}
         </div>
         <div className="flex">
@@ -54,9 +59,9 @@ export default function PostPreview({
       </div>
       <div className="flex">
         <Image
-          width={200}
+          width={500}
           height={100}
-          className="sm:hidden mt-4 rounded-md sm:p-0 h-15 w-15"
+          className="hidden sm:block mt-4 rounded-md sm:p-0"
           alt={`Cover Image for ${title}`}
           src={coverImage.url}
         />

@@ -1,18 +1,25 @@
-import Link from 'next/link'
-import cn from 'classnames'
+import Link from "next/link";
+import cn from "classnames";
 
-import Image from '@/components/Contentful/Image'
+import Image from "@/components/Contentful/Image";
 
-export default function CoverImage({ title, url, slug, width, height, className }: any) {
+export default function CoverImage({
+  title,
+  url,
+  slug,
+  width,
+  height,
+  className,
+}: any) {
   const image = (
     <Image
-      width={width ?? 300}
-      height={height ?? 300}
+      width={width ?? 800}
+      height={height ?? 800}
       alt={`Cover Image for ${title}`}
       className={className}
       src={url}
     />
-  )
+  );
 
   return (
     <div className="sm:mx-0">
@@ -24,5 +31,5 @@ export default function CoverImage({ title, url, slug, width, height, className 
         image
       )}
     </div>
-  )
+  );
 }

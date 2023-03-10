@@ -1,9 +1,15 @@
-import Avatar from '@/components/Contentful/Avatar';
-import DateFormat from '@/components/Contentful/DateFormat';
-import CoverImage from '@/components/Blog/CoverImage'
-import { BookmarkIcon, ShareIcon } from '@heroicons/react/24/outline';
+import Avatar from "@/components/Contentful/Avatar";
+import DateFormat from "@/components/Contentful/DateFormat";
+import CoverImage from "@/components/Blog/CoverImage";
+import { BookmarkIcon, ShareIcon } from "@heroicons/react/24/outline";
 
-export default function PostHeader({ title, coverImage, date, author, tags }: any) {
+export default function PostHeader({
+  title,
+  coverImage,
+  date,
+  author,
+  tags,
+}: any) {
   return (
     <>
       <div className="my-5">
@@ -35,9 +41,11 @@ export default function PostHeader({ title, coverImage, date, author, tags }: an
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <CoverImage width={1000} height={500} title={title} url={coverImage.url} className="rounded-lg" />
-      </div>
+      <CoverImage
+        title={title}
+        url={coverImage.url}
+        className="rounded-lg w-full h-72 sm:h-96"
+      />
     </>
-  )
+  );
 }
