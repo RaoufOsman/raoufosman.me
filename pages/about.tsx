@@ -9,13 +9,13 @@ import { Socials } from "@/components/SocialIcons";
 function SocialLink({ className, href, children, icon: Icon }: any) {
   return (
     <li className={classNames(className, 'flex')}>
-      <Link
+      <a
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-white dark:hover:text-teal-500"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-white-500" />
         <span className="ml-4">{children}</span>
-      </Link>
+      </a>
     </li>
   )
 }
