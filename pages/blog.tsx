@@ -17,7 +17,7 @@ export default function Blog({ posts }: any) {
   if (!posts) return loading(state.darkMode);
 
   return (
-    <BlogLayout title={`RO - Blog`} description="RO Blogs page">
+    <BlogLayout title={`RO - Blog`} description="RO Blog Weekly Series">
       <h2 className="text-2xl pt-3">Welcome to our weekly blog series! Each day, we bring you fresh content on a specific topic to help you stay motivated and informed. Here&apos;s a brief overview of what you can expect:</h2>
       <p className="text-lg py-2">Motivation Monday: Start your week off right with a dose of inspiration and motivation. We&apos;ll share tips on how to stay motivated, stories of success, and insights into how to overcome challenges.</p>
       <p className="text-lg py-2">Technical Tuesday: Dive into the world of technology with our Technical Tuesday posts. We&apos;ll explore the latest tech trends, highlight new tools and technologies, and share tips and tricks for developers and engineers.</p>

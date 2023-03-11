@@ -31,7 +31,7 @@ function MailIcon(props: any) {
 
 export default function About() {
   return (
-    <BaseLayout title="RO - About" pageDescription="About page">
+    <BaseLayout title="RO - About" pageDescription="About RO">
       <div className="max-w-3xl mx-auto">
         <div className="grid grid-cols-2">
           <div>
