@@ -13,8 +13,8 @@ export default function CoverImage({
 }: any) {
   const image = (
     <Image
-      width={width ?? 800}
-      height={height ?? 800}
+      width={width ?? 1000}
+      height={height ?? 1000}
       alt={`Cover Image for ${title}`}
       className={className}
       src={url}

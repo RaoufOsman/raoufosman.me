@@ -62,8 +62,8 @@ export default function PostPreview({
       <div className="flex">
         <Image
           width={500}
-          height={100}
-          className="hidden sm:block mt-4 rounded-md sm:p-0"
+          height={1000}
+          className="hidden sm:block mt-4 rounded-md sm:p-0 md:h-1/2 object-cover sm:h-3/4"
           alt={`Cover Image for ${title}`}
           src={coverImage.url}
         />

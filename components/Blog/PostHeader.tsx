@@ -44,7 +44,7 @@ export default function PostHeader({
       <CoverImage
         title={title}
         url={coverImage.url}
-        className="rounded-lg w-full h-72 sm:h-96"
+        className="rounded-lg w-full h-96 object-cover"
       />
     </>
   );
