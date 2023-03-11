@@ -22,6 +22,10 @@ export default function PostPreview({
     router.push(`blog/${slug}`);
   };
 
+  const bookmark = (e: any) => {
+    
+  }
+
   return (
     <div
       className="flex flex-row justify-between cursor-pointer"
@@ -54,7 +58,7 @@ export default function PostPreview({
             ))}
           </div>
           <div className="flex mt-1 sm:mt-0">
-            <BookmarkIcon className="h-4 w-4 text-gray-400 mt-1 mr-1 sm:h-6 sm:w-6" />
+            <BookmarkIcon className="h-4 w-4 text-gray-400 mt-1 mr-1 sm:h-6 sm:w-6" onClick={bookmark} />
             <ShareIcon className="h-4 w-4 text-gray-400 mt-1 sm:h-6 sm:w-6" />
           </div>
         </div>

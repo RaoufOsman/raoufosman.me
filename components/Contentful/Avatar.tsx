@@ -16,7 +16,7 @@ export default function Avatar({ name, picture }: IAvatarProps) {
         alt={name}
       />
       <div className="flex mt-2">
-        <span className="text-black text-sm font-bold ml-3">{name}</span>
+        <span className="text-sm font-bold ml-3">{name}</span>
         {/* <span className="text-gray-500 text-sm mr-1">in</span>
         <span className="text-black text-sm font-bold">Medium Staff</span> */}
       </div>
