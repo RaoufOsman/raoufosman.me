@@ -9,6 +9,7 @@ export default function PostHeader({
   date,
   author,
   tags,
+  coverImageDescription
 }: any) {
   return (
     <>
@@ -44,6 +45,7 @@ export default function PostHeader({
       <CoverImage
         title={title}
         url={coverImage.url}
+        description={coverImageDescription}
         className="rounded-lg w-full h-96 object-cover"
       />
     </>

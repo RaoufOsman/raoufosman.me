@@ -33,7 +33,7 @@ export default function About() {
   return (
     <BaseLayout title="RO - About" pageDescription="About RO">
       <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-2">
+        <div className="flex flex-row">
           <div>
             <p className="my-5">Hi, I&apos;m RO - a passionate software engineer with a strong desire to use my skills and knowledge to make a positive impact in the world. As an introvert, I&apos;ve always found it challenging to put myself out there and share my ideas with others. However, I&apos;ve realized that my voice and my unique perspective are valuable, and I&apos;m determined to overcome my shyness and show the world what I have to offer.</p>
 
@@ -42,7 +42,7 @@ export default function About() {
             <p className="my-5">As a software engineer, I&apos;m committed to using my skills to make a positive impact in the world. Whether I&apos;m developing mobile applications that make life easier for everyday people or building complex web applications that streamline business operations, I&apos;m always thinking about how my work can have a real-world impact.</p>
             <p className="my-5">I invite you to read my posts and share your comments with me via Twitter or email. I hope to provide a platform for sharing my experiences and insights with others in the software engineering community. I want to connect with like-minded individuals who are passionate about using technology to solve real-world problems and to learn from their experiences as well. By coming out of my shell and showing the world who I am, I hope to inspire others to do the same and to make a meaningful difference in the world through software engineering.</p>
           </div>
-          <div>
+          <div className="basis-1/4">
             <div className="lg:pl-20">
               <div className="max-w-xs px-2.5 lg:max-w-none">
                 <Image

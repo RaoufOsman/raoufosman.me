@@ -2,6 +2,7 @@ import Link from "next/link";
 import cn from "classnames";
 
 import Image from "@/components/Contentful/Image";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function CoverImage({
   title,
@@ -10,6 +11,7 @@ export default function CoverImage({
   width,
   height,
   className,
+  description
 }: any) {
   const image = (
     <Image
@@ -28,7 +30,10 @@ export default function CoverImage({
           {image}
         </Link>
       ) : (
-        image
+          <>
+            {image}
+            <span className="text-sm text-gray-400"><ReactMarkdown>{description}</ReactMarkdown></span>
+          </>
       )}
     </div>
   );

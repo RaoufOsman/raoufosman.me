@@ -16,6 +16,7 @@ title
 coverImage {
   url
 }
+coverImageDescription
 date
 author {
   name

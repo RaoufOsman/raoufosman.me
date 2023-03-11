@@ -31,7 +31,7 @@ export default function Post({ post }: IPostProps) {
 
   return (
     <BlogLayout title={`RO - ${post.title}`} description={post.excerpt} additionalMetaTags={getAdditionalMetaTags(post)}>
-      <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} />
+      <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.contentfulMetadata.tags} coverImageDescription={post.coverImageDescription} />
       <RichText content={post.content} />
     </BlogLayout>
   )
