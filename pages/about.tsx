@@ -79,3 +79,9 @@ export default function About() {
     </BaseLayout>
   )
 }
+
+export async function getStaticProps() {
+  return {
+    revalidate: 5
+  }
+}

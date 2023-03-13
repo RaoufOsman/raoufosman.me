@@ -23,12 +23,12 @@ export default function PostPreview({
   };
 
   const bookmark = (e: any) => {
-    
+
   }
 
   return (
     <div
-      className="flex flex-row justify-between cursor-pointer my-10"
+      className="flex flex-row justify-between cursor-pointer"
       onClick={navigateToBlog}
     >
       <div className="flex flex-col">

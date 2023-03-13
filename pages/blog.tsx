@@ -48,5 +48,6 @@ export async function getStaticProps({ preview = true }) {
     props: {
       posts
     },
+    revalidate: 5
   }
 }

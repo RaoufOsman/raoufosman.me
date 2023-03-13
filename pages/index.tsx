@@ -31,5 +31,6 @@ export async function getStaticProps({ preview = false }) {
       bio,
       posts
     },
+    revalidate: 5
   }
 }
