@@ -23,8 +23,8 @@ export default function Home({ bio, posts }: IHomeProps) {
   )
 }
 
-export async function getStaticProps({ preview = true }) {
-  const posts = await getAllPostsForHome(preview, 5);
+export async function getStaticProps({ preview = false }) {
+  const posts = await getAllPostsForHome(5, preview);
   const bio = await getHomePageBio();
   return {
     props: {
