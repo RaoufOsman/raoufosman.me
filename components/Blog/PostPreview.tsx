@@ -28,7 +28,7 @@ export default function PostPreview({
 
   return (
     <div
-      className="flex flex-row justify-between cursor-pointer"
+      className="flex flex-row justify-between cursor-pointer my-10"
       onClick={navigateToBlog}
     >
       <div className="flex flex-col">
