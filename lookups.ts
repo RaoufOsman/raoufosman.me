@@ -12,5 +12,6 @@ export const BLOG_TAG_IDS = {
   TECHNICAL_TUESDAY: 'blogTechnicalTuesday',
   WISDOM_WEDNESDAY: 'blogWisdomWednesday',
   TUTORIAL_THURSDAY: 'blogTutorialThursday',
-  FUNDAMENTAL_FRIDAY: 'blogFundamentalFriday'
+  FUNDAMENTAL_FRIDAY: 'blogFundamentalFriday',
+  BLOG: 'blog'
 }

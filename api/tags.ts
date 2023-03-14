@@ -1,16 +1,32 @@
 import { BLOG_TAG_IDS } from "@/lookups";
-import axios from "axios";
+import { createClient } from "contentful";
 
-const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_SITE_URL!
-});
+const space = process.env.CONTENTFUL_SPACE_ID;
+const environment = process.env.CONTENTFUL_ENVIRONMENT_ID;
+const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+const host = "cdn.contentful.com";
 
 export const getAllTags = async () => {
-  //console.log('about to send api request to get all tags');
-  const response = await api.get('/api/tags');
+  try {
+    if (space && environment && accessToken) {
+      const client = createClient({
+        space,
+        environment,
+        accessToken,
+        host
+      });
 
-  return response?.data?.tags;
-  //return []
+      const tags = await client.getTags();
+
+      return tags.items;
+    }
+
+    return [];
+  }
+  catch (e: any) {
+    console.error(e);
+    return [];
+  }
 }
 
 export const getPageMetadataByTagId = (tagId: string) => {
@@ -25,9 +41,9 @@ export const getPageMetadataByTagId = (tagId: string) => {
       return { title: "Tutorial Thursday", description: "Ready to master new skills? Our Tutorial Thursday posts are packed with step-by-step guides and how-to tutorials to help you level up your technical abilities." };
     case BLOG_TAG_IDS.FUNDAMENTAL_FRIDAY:
       return { title: "Fundamental Friday", description: "Wrap up your week with a focus on the basics. Our Fundamental Friday posts will cover essential concepts in software engineering, including coding principles, software architecture, and more." };
+
+    case BLOG_TAG_IDS.BLOG:
     default:
       return { title: "All Blogs", description: "All posts" };
-      break;
   }
-
 }

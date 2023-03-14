@@ -9,10 +9,11 @@ import { BLOG_TAG_IDS } from "@/lookups";
 
 interface ITagProps {
   posts: any[];
-  pageMetadata: any
+  title: string;
+  description: string;
 }
 
-export default function Tag({ posts, pageMetadata }: ITagProps) {
+export default function Tag({ posts, title, description }: ITagProps) {
   const router = useRouter();
 
   // if (pageMeta().title === "") {
@@ -20,9 +21,9 @@ export default function Tag({ posts, pageMetadata }: ITagProps) {
   // }
 
   return (
-    <TagsLayout title={`RO - ${pageMetadata.title}`} description={pageMetadata.description}>
-      <h2 className="text-3xl mt-5">{pageMetadata.title}</h2>
-      <h3 className="text-xl my-6">{pageMetadata.description}</h3>
+    <TagsLayout title={`RO - ${title}`} description={description}>
+      <h2 className="text-3xl mt-5">{title}</h2>
+      <h3 className="text-xl my-6">{description}</h3>
       {
         posts && posts.length > 0
           ? posts.map((post: any) => (
@@ -45,12 +46,12 @@ export default function Tag({ posts, pageMetadata }: ITagProps) {
 
 export async function getStaticProps({ params }: any) {
   const posts = await getPostsByTagId(params.tagId);
-
   const pageMeta = getPageMetadataByTagId(params.tagId);
 
   return {
     props: {
-      pageMetadata: pageMeta,
+      title: pageMeta.title,
+      description: pageMeta.description,
       posts: posts ?? [],
     },
     revalidate: 10
@@ -60,7 +61,7 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const tags = await getAllTags();
   return {
-    paths: tags?.map((t: any) => `/tags/${t.id}`) ?? [],
+    paths: tags?.map((t: any) => `/tags/${t.sys.id}`) ?? [],
     fallback: true,
   }
 }
