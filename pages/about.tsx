@@ -35,7 +35,7 @@ export default function About() {
       <div className="max-w-3xl mx-auto">
         <div className="flex flex-row">
           <div>
-            <p className="my-5">Hi, I&apos;m RO - a passionate software engineer with a strong desire to use my skills and knowledge to make a positive impact in the world. I'm an introvert, like most devs, but suffer from impostor system at times. I&apos;ve always found it challenging to put myself out there and share my ideas with others. However, I&apos;ve realized that my voice and my unique perspective are valuable, and I&apos;m determined to overcome my shyness and show the world what I have to offer.</p>
+            <p className="my-5">Hi, I&apos;m RO - a passionate software engineer with a strong desire to use my skills and knowledge to make a positive impact in the world. I&apos;m an introvert, like most devs, but suffer from impostor system at times. I&apos;ve always found it challenging to put myself out there and share my ideas with others. However, I&apos;ve realized that my voice and my unique perspective are valuable, and I&apos;m determined to overcome my shyness and show the world what I have to offer.</p>
 
             <p className="my-5">Over the past few years, I&apos;ve honed my skills as a software engineer, working on a wide range of projects that have pushed me outside of my comfort zone. I&apos;ve had the privilege of working with a variety of clients, including private companies in Maryland and various government agencies. Through these experiences, I&apos;ve learned the value of perseverance, hard work, and collaboration, and I&apos;m constantly seeking out new challenges and opportunities to learn and grow.</p>
 
