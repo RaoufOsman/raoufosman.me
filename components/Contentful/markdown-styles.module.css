@@ -2,6 +2,11 @@
   @apply text-lg leading-relaxed;
 }
 
+.markdown p,
+.markdown ul,
+.markdown ol {
+  @apply my-6;
+}
 
 .markdown blockquote {
   @apply p-4 my-4 border-l-8 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800
