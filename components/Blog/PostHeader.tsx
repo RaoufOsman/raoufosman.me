@@ -36,7 +36,7 @@ export default function PostHeader({
               </div>
             ))}
           </div>
-          <div className="flex mt-1 sm:mt-0">
+          <div className="hidden flex mt-1 sm:mt-0">
             <BookmarkIcon className="h-4 w-4 text-gray-400 mt-1 mr-1 sm:h-6 sm:w-6" />
             <ShareIcon className="h-4 w-4 text-gray-400 mt-1 sm:h-6 sm:w-6" />
           </div>

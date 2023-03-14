@@ -6,3 +6,11 @@ export const BLOG_FILTERS = {
   THURSDAY: 4,
   FRIDAY: 5,
 }
+
+export const BLOG_TAG_IDS = {
+  MOTIVATION_MONDAY: 'blogMotivationMonday',
+  TECHNICAL_TUESDAY: 'blogTechnicalTuesday',
+  WISDOM_WEDNESDAY: 'blogWisdomWednesday',
+  TUTORIAL_THURSDAY: 'blogTutorialThursday',
+  FUNDAMENTAL_FRIDAY: 'blogFundamentalFriday'
+}

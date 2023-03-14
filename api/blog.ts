@@ -103,3 +103,24 @@ export async function getAllPostsForHome(limit: number, preview: boolean = false
   )
   return extractPostEntries(entries)
 }
+
+export async function getPostsByTagId(tagId: string) {
+  const entries = await fetchGraphQL(
+    `query {
+        blogCollection(
+          where: {
+            contentfulMetadata: {
+              tags_exists: true
+              tags: { id_contains_some: ["${tagId}"] }
+            }
+          }
+        ) {
+        items {
+          ${BLOG_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+
+  return extractPostEntries(entries)
+}

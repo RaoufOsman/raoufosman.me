@@ -3,8 +3,6 @@ import PostHeader from '@/components/Blog/PostHeader';
 import RichText from '@/components/Contentful/RichText';
 import { useTheme } from '@/context/ThemeContext';
 import BlogLayout from '@/layouts/BlogLayout';
-import darkLoading from '@/public/images/ro-dark.gif';
-import lightLoading from '@/public/images/ro-light.gif';
 
 interface IPostProps {
   post: any
