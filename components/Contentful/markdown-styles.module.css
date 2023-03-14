@@ -13,7 +13,7 @@
 }
 
 .markdown blockquote p {
-  @apply text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white
+  @apply text-lg font-bold leading-relaxed text-gray-900 dark:text-white
 }
 
 .markdown h1 {
