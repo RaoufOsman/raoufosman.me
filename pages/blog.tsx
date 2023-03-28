@@ -18,7 +18,7 @@ export default function Blog({ posts }: any) {
 
   return (
     <BlogLayout title={`RO - Blog`} description="RO Blog Weekly Series">
-      <h2 className="text-xl pt-3">Welcome to our blog series! Each day, we bring you fresh content on a specific topic to help you stay motivated and informed. Check out some of our recent posts.</h2>
+      <h2 className="text-xl pt-3">Welcome to our blog! We bring you fresh content on a variety of topics to help you stay motivated and informed. From software engineering to tech trends, our blog covers a range of subjects to help you grow both personally and professionally. Check out some of our recent posts below and join us on this journey of discovery.</h2>
       <div className="my-10">
         {posts.map((post: any) => (
           <PostPreview

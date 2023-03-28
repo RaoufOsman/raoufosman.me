@@ -34,7 +34,7 @@ export const getPageMetadataByTagId = (tagId: string) => {
     case BLOG_TAG_IDS.MOTIVATION_MONDAY:
       return { title: "Motivation Monday", description: "Start your week off right with a dose of inspiration and motivation. We'll share tips on how to stay motivated, stories of success, and insights into how to overcome challenges." };
     case BLOG_TAG_IDS.TECHNICAL_TUESDAY:
-      return { title: "Technical Tuesday", description: "Dive into the world of technology with our Technical Tuesday posts. We'll explore the latest tech trends, highlight new tools and technologies, and share tips and tricks for developers and engineers." };
+      return { title: "Tech Tuesday", description: "Explore the exciting world of technology with our Tech Tuesday posts. We'll delve into the latest and greatest technologies, tools, and techniques that developers and engineers need to know. From tips and tricks to troubleshooting advice, our posts will provide you with the insights and information you need to stay ahead of the curve." };
     case BLOG_TAG_IDS.WISDOM_WEDNESDAY:
       return { title: "Widsom Wednesday", description: "Gain insights and broaden your horizons with our Wisdom Wednesday posts. We'll share quotes from thought leaders, lessons learned from industry experts, and other pearls of wisdom to help you grow both personally and professionally." };
     case BLOG_TAG_IDS.TUTORIAL_THURSDAY:
