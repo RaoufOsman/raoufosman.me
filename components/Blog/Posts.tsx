@@ -32,7 +32,7 @@ export default function Posts({ limit, filter, posts }: IPostProps) {
 
   return (
     <div className="mt-10">
-      <h2 className="text-3xl leading-6 mt-3 mb-1">Recent Blog Posts</h2>
+      <h2 className="text-3xl leading-6 mt-3 mb-1">Featured Blog Posts</h2>
       <div className="mb-5 mt-5">
         {posts.slice(0, limit).filter(filterBlogPosts).map((post) => (
           <PostPreview
