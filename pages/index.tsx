@@ -6,6 +6,7 @@ import HomePageBio from "@/components/Home/HomePageBio";
 import Posts from "@/components/Blog/Posts";
 
 import { BLOG_FILTERS } from "@/lookups";
+import Link from "next/link";
 
 interface IHomeProps {
   bio: any,
@@ -17,7 +18,7 @@ export default function Home({ bio, posts }: IHomeProps) {
     <BaseLayout title="RO - Home" pageDescription="Home page">
       <div className="max-w-3xl mx-auto">
         <HomePageBio bio={bio} />
-        <Posts limit={5} filter={BLOG_FILTERS.NONE} posts={posts} />
+        <Posts limit={3} filter={BLOG_FILTERS.NONE} posts={posts} />
       </div>
     </BaseLayout>
   )
