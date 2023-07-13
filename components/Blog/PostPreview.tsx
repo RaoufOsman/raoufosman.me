@@ -32,7 +32,7 @@ export default function PostPreview({
 
   return (
     <div
-      className="flex flex-row justify-between md:mb-11 h-48"
+      className="flex flex-row justify-between mb-3 sm:mb-5 md:mb-12 md:h-48"
     >
       <div className="flex flex-col">
         {author && <Avatar name={author.name} picture={author.picture} />}
